@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="800" height="524">
+	<mx:TabNavigator x="9" y="28" width="781" height="462">
+		<mx:Canvas label="Παράμετροι" width="100%" height="100%" backgroundColor="#FFFFFF">
+			<mx:Grid x="10" y="47" width="759" height="305" cornerRadius="5" backgroundAlpha="0.95" borderColor="#0B333C">
+				<mx:GridRow width="100%" height="100%">
+					<mx:GridItem width="555" height="100%">
+					</mx:GridItem>
+					<mx:GridItem width="100%" height="25">
+					</mx:GridItem>
+					<mx:GridItem width="100%" height="100%">
+					</mx:GridItem>
+					<mx:GridItem width="128" height="100%">
+					</mx:GridItem>
+				</mx:GridRow>
+				<mx:GridRow width="100%" height="100%">
+					<mx:GridItem width="100%" height="100%">
+					</mx:GridItem>
+					<mx:GridItem width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+						<mx:Label text="ΧΑΜΗΛΟ" textAlign="center" fontWeight="bold" color="#F98810" fontSize="15"/>
+					</mx:GridItem>
+					<mx:GridItem width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+						<mx:Label text="ΦΥΣΙΟΛΟΓΙΚΟ" fontWeight="bold" color="#0A8F0A" fontSize="15"/>
+					</mx:GridItem>
+					<mx:GridItem width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+						<mx:Label text="ΥΨΗΛΟ" color="#FF0000" fontWeight="bold" fontSize="15"/>
+					</mx:GridItem>
+				</mx:GridRow>
+				<mx:GridRow width="100%" height="100%" borderColor="#0000FF" borderThickness="2" borderStyle="none">
+					<mx:GridItem width="100%" height="100%" verticalAlign="middle" horizontalAlign="right">
+						<mx:Label enabled="true" height="17" width="299" htmlText="&lt;B&gt;ΑΣΒΕΣΤΙΟ&lt;/B&gt; &quot;Ιονισμένο&quot; (Μη Ενωμένο με Λευκωματίνη)"/>
+					</mx:GridItem>
+					<mx:GridItem width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+						<mx:Label text="&lt; ΑΠΟ:" fontSize="10"/>
+						<mx:TextInput width="50" borderStyle="solid" cornerRadius="10" borderColor="#0B333C" fontSize="12" editable="false" tabEnabled="false" id="txtCaLow"/>
+					</mx:GridItem>
+					<mx:GridItem width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+						<mx:Label text="ΑΠΟ:"/>
+						<mx:TextInput width="50" borderStyle="solid" cornerRadius="1" borderColor="#0B333C" fontSize="12" id="txtCaLowNormal" change="txtCaLowNormal_change()"/>
+						<mx:Label text="ΕΩΣ:"/>
+						<mx:TextInput width="50" borderStyle="solid" cornerRadius="1" borderColor="#0B333C" fontSize="12" id="txtCaHighNormal" change="txtCaHighNormal_change()"/>
+					</mx:GridItem>
+					<mx:GridItem width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+						<mx:Label text="&gt; ΑΠΟ:"/>
+						<mx:TextInput width="50" borderStyle="solid" cornerRadius="10" borderColor="#0B333C" fontSize="12" editable="false" tabEnabled="false" id="txtCaHigh"/>
+					</mx:GridItem>
+				</mx:GridRow>
+				<mx:GridRow width="100%" height="100%">
+					<mx:GridItem width="100%" height="100%" horizontalAlign="right" verticalAlign="middle">
+						<mx:Label htmlText="&lt;B&gt;ΦΩΣΦΟΡΟΣ&lt;/B&gt;"/>
+					</mx:GridItem>
+					<mx:GridItem width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+						<mx:Label text="&lt; ΑΠΟ:"/>
+						<mx:TextInput width="50" borderStyle="solid" cornerRadius="10" borderColor="#0B333C" fontSize="12" editable="false" tabEnabled="false" id="txtPLow"/>
+					</mx:GridItem>
+					<mx:GridItem width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+						<mx:Label text="ΑΠΟ:"/>
+						<mx:TextInput width="50" borderStyle="solid" cornerRadius="1" borderColor="#0B333C" fontSize="12" id="txtPLowNormal" change="txtPLowNormal_change()"/>
+						<mx:Label text="ΕΩΣ:"/>
+						<mx:TextInput width="50" borderStyle="solid" cornerRadius="1" borderColor="#0B333C" fontSize="12" id="txtPHighNormal" change="txtPHighNormal_change()"/>
+					</mx:GridItem>
+					<mx:GridItem width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+						<mx:Label text="&gt; ΑΠΟ:"/>
+						<mx:TextInput width="50" borderStyle="solid" cornerRadius="10" borderColor="#0B333C" fontSize="12" editable="false" tabEnabled="false" id="txtPHigh"/>
+					</mx:GridItem>
+				</mx:GridRow>
+				<mx:GridRow width="100%" height="100%">
+					<mx:GridItem width="100%" height="100%" horizontalAlign="right" verticalAlign="middle">
+						<mx:Label htmlText="&lt;B&gt; ΑΛΚΑΛΙΚΗ ΦΩΣΦΑΤΑΣΗ&lt;/B&gt;"/>
+					</mx:GridItem>
+					<mx:GridItem width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+						<mx:Label text="&lt; ΑΠΟ:"/>
+						<mx:TextInput width="50" borderStyle="solid" cornerRadius="10" borderColor="#0B333C" fontSize="12" editable="false" tabEnabled="false" id="txtAlcLow"/>
+					</mx:GridItem>
+					<mx:GridItem width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+						<mx:Label text="ΑΠΟ:"/>
+						<mx:TextInput width="50" borderStyle="solid" cornerRadius="1" borderColor="#0B333C" fontSize="12" id="txtAlcLowNormal" change="txtAlcLowNormal_change()"/>
+						<mx:Label text="ΕΩΣ:"/>
+						<mx:TextInput width="50" borderStyle="solid" cornerRadius="1" borderColor="#0B333C" fontSize="12" id="txtAlcHighNormal" change="txtAlcHighNormal_change()"/>
+					</mx:GridItem>
+					<mx:GridItem width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+						<mx:Label text="&gt; ΑΠΟ:"/>
+						<mx:TextInput width="50" borderStyle="solid" cornerRadius="10" borderColor="#0B333C" fontSize="12" editable="false" tabEnabled="false" id="txtAlcHigh"/>
+					</mx:GridItem>
+				</mx:GridRow>
+				<mx:GridRow width="100%" height="100%">
+					<mx:GridItem width="100%" height="100%" horizontalAlign="right" verticalAlign="middle">
+						<mx:Label htmlText="&lt;B&gt;ΑΣΒΕΣΤΙΟ ΟΥΡΩΝ&lt;/B&gt;"/>
+					</mx:GridItem>
+					<mx:GridItem width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+						<mx:Label text="&lt; ΑΠΟ:"/>
+						<mx:TextInput width="50" borderStyle="solid" cornerRadius="10" borderColor="#0B333C" fontSize="12" editable="false" tabEnabled="false" id="txtCaOurLow"/>
+					</mx:GridItem>
+					<mx:GridItem width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+						<mx:Label text="ΑΠΟ:"/>
+						<mx:TextInput width="50" borderStyle="solid" cornerRadius="1" borderColor="#0B333C" fontSize="12" id="txtCaOurLowNormal" change="txtCaOurLowNormal_change()"/>
+						<mx:Label text="ΕΩΣ:"/>
+						<mx:TextInput width="50" borderStyle="solid" cornerRadius="1" borderColor="#0B333C" fontSize="12" id="txtCaOurHighNormal" change="txtCaOurHighNormal_change()"/>
+					</mx:GridItem>
+					<mx:GridItem width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+						<mx:Label text="&gt; ΑΠΟ:"/>
+						<mx:TextInput width="50" borderStyle="solid" cornerRadius="10" borderColor="#0B333C" fontSize="12" editable="false" tabEnabled="false" id="txtCaOurHigh"/>
+					</mx:GridItem>
+				</mx:GridRow>
+			</mx:Grid>
+			<mx:Label x="10" y="21" text="Παρακαλώ εισάγετε τις φυσιολογικές μόνο τιμές αναφοράς για το εργαστήριό σας: Μετά κάντε κλικ στην καρτέλα Υπολογισμός" width="759" fontWeight="bold" textAlign="center"/>
+			<mx:Button x="308" y="378" label="Φόρτωση ενδεικτικών τιμών" width="194" id="btLoadDefaults"/>
+			<mx:Button x="529" y="378" label="Εκκαθάριση τιμών" width="155" id="btClearAll" click="ClearAll()"/>
+		</mx:Canvas>
+		<mx:Form label="Υπολογισμός" width="100%" height="100%">
+			<mx:FormItem label="Εισάγετε τις τιμές του ασθενή σύμφωνα με τη μέτρηση του εργαστηρίου σας:" fontWeight="bold">
+			</mx:FormItem>
+			<mx:FormItem height="11">
+			</mx:FormItem>
+			<mx:Grid width="405" height="145">
+				<mx:GridRow width="100%" height="100%">
+					<mx:GridItem width="100%" height="100%" horizontalAlign="right" verticalAlign="middle">
+						<mx:Label enabled="true" height="17" width="299" htmlText="&lt;B&gt;ΑΣΒΕΣΤΙΟ&lt;/B&gt; &quot;Ιονισμένο&quot; (Μη Ενωμένο με Λευκωματίνη)"/>
+					</mx:GridItem>
+					<mx:GridItem width="100%" height="100%" verticalAlign="middle" horizontalAlign="left">
+						<mx:TextInput width="66" borderStyle="solid" cornerRadius="1" borderColor="#0B333C" fontSize="12" id="txtCa"/>
+					</mx:GridItem>
+				</mx:GridRow>
+				<mx:GridRow width="100%" height="100%">
+					<mx:GridItem width="100%" height="100%" horizontalAlign="right" verticalAlign="middle">
+						<mx:Label htmlText="&lt;B&gt;ΦΩΣΦΟΡΟΣ&lt;/B&gt;"/>
+					</mx:GridItem>
+					<mx:GridItem width="100%" height="100%" verticalAlign="middle" horizontalAlign="left">
+						<mx:TextInput width="66" borderStyle="solid" cornerRadius="1" borderColor="#0B333C" fontSize="12" id="txtP"/>
+					</mx:GridItem>
+				</mx:GridRow>
+				<mx:GridRow width="100%" height="100%">
+					<mx:GridItem width="100%" height="100%" horizontalAlign="right" verticalAlign="middle">
+						<mx:Label htmlText="&lt;B&gt; ΑΛΚΑΛΙΚΗ ΦΩΣΦΑΤΑΣΗ&lt;/B&gt;"/>
+					</mx:GridItem>
+					<mx:GridItem width="100%" height="100%" verticalAlign="middle" horizontalAlign="left">
+						<mx:TextInput width="66" borderStyle="solid" cornerRadius="1" borderColor="#0B333C" fontSize="12" id="txtAlc"/>
+					</mx:GridItem>
+				</mx:GridRow>
+				<mx:GridRow width="100%" height="100%">
+					<mx:GridItem width="100%" height="100%" horizontalAlign="right" verticalAlign="middle">
+						<mx:Label htmlText="&lt;B&gt;ΑΣΒΕΣΤΙΟ ΟΥΡΩΝ&lt;/B&gt;"/>
+					</mx:GridItem>
+					<mx:GridItem width="100%" height="100%" verticalAlign="middle" horizontalAlign="left">
+						<mx:TextInput width="66" borderStyle="solid" cornerRadius="1" borderColor="#0B333C" fontSize="12" id="txtCaOur"/>
+					</mx:GridItem>
+				</mx:GridRow>
+			</mx:Grid>
+			<mx:FormItem width="439" height="9">
+				<mx:Label/>
+			</mx:FormItem>
+			<mx:Label text="Και μετά κάντε κλικ στο κουμπί Υπολογισμός για Πιθανές Νόσους και άλλες εξετάσεις που απαιτούνται:" fontWeight="bold"/>
+			<mx:FormItem width="653" height="35">
+				<mx:Grid width="220">
+					<mx:GridRow width="100%" height="39">
+						<mx:GridItem width="109" height="100%" horizontalAlign="center" verticalAlign="middle">
+							<mx:Button label="Υπολογισμός" textAlign="right" width="106" click="Calculate()"/>
+						</mx:GridItem>
+						<mx:GridItem width="95" height="100%" horizontalAlign="center" verticalAlign="middle">
+							<mx:Button label="Εκκαθάριση" click="ClearCalc()"/>
+						</mx:GridItem>
+					</mx:GridRow>
+				</mx:Grid>
+			</mx:FormItem>
+			<mx:FormItem label="ΠΙΘΑΝΗ ΝΟΣΟΣ:" horizontalAlign="center" id="lbPossible" fontWeight="bold" visible="false">
+				<mx:TextArea wordWrap="true" width="290" id="txtNosos" fontWeight="bold"/>
+			</mx:FormItem>
+			<mx:FormItem label="ΑΛΛΕΣ ΕΞΕΤΑΣΕΙΣ ΠΟΥ ΑΠΑΙΤΟΥΝΤΑΙ:" id="lbExetaseis" fontWeight="bold" height="60" visible="false">
+				<mx:TextArea width="291" height="58" id="txtExetaseis" wordWrap="true" fontWeight="bold"/>
+			</mx:FormItem>
+		</mx:Form>
+		<mx:Canvas label="Πνευματικά Δικαιώματα" width="100%" height="100%">
+			<mx:TextArea x="66.5" y="10" width="646" height="50" wordWrap="true" fontWeight="bold" fontSize="13">
+				<mx:text>Ανάπτυξη Λογισμικού Κλινικής Βιοχημείας με βοηθητικό-συμβουλευτικό ρόλο στην ερμηνεία των εργαστηριακών προσδιορισμών ασβεστίου και φωσφόρου ορού/ούρων.</mx:text>
+			</mx:TextArea>
+			<mx:TextArea x="66" y="91" width="646.5" height="66" fontSize="13" fontWeight="bold" wordWrap="true">
+				<mx:text>Ζ. Ζουλλιέν (1993) Διαταραχές ισοζυγίου νερού και ηλεκτρολυτών, σελ. 73-84, &quot;Οξεοβασική ισορροπία&quot;, Περιλήψεις Διαλέξεων Σεμιναρίου της Ελ. Εταιρείας Κλινικής Χημείας.</mx:text>
+			</mx:TextArea>
+			<mx:TextArea x="225.75" y="209" width="327.5" height="64" wordWrap="true" fontSize="13" fontWeight="bold" color="#2465E9">
+				<mx:text><![CDATA[Δελημάρης Ι. (Εργ. Βιοχημείας ΕΚΠΑ), Δελημάρης Κ. (Σιβιτανίδειος Σχολή Τεχνών και Επαγγελμάτων)                       (C) 2009]]></mx:text>
+			</mx:TextArea>
+			<mx:Label x="66" y="401" text="Το πρόγραμμα αναπτύχθηκε με το Adobe Flex SDK. (TM) 2009 Adobe Corporation" width="646.5" textAlign="center"/>
+		</mx:Canvas>
+	</mx:TabNavigator>
+	<mx:Label x="10" y="498" text="ΣΧΕΔΙΑΣΗ ΚΑΙ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟΣ: ΚΩΝ/ΝΟΣ Α. ΔΕΛΗΜΑΡΗΣ (C) 2009" width="780" textAlign="center" color="#FFFFFF" fontWeight="bold"/>
+	<mx:Script>
+        <![CDATA[
+        	
+        	import mx.controls.Alert;
+         	
+            private function txtCaLowNormal_change():void
+            {
+            	try
+            	{
+            		txtCaLow.text = txtCaLowNormal.text;	
+	            }
+	            catch (e:Error)
+	            {
+	            	Alert.show("ΠΑΡΟΥΣΙΑΣΤΗΚΕ ΚΑΠΟΙΟ ΣΦΑΛΜΑ. ΠΑΡΑΚΑΛΩ ΕΛΕΓΞΤΕ!","ΠΑΡΟΥΣΙΑΣΤΗΚΕ ΣΦΑΛΜΑ",4,null,null,null,4);
+	            	//trace(e.message);
+	            }
+            }
+            
+            private function txtCaHighNormal_change():void
+           	{
+            	try
+            	{
+            		txtCaHigh.text = txtCaHighNormal.text;	
+	            }
+	            catch (e:Error)
+	            {
+	            	Alert.show("ΠΑΡΟΥΣΙΑΣΤΗΚΕ ΚΑΠΟΙΟ ΣΦΑΛΜΑ. ΠΑΡΑΚΑΛΩ ΕΛΕΓΞΤΕ!","ΠΑΡΟΥΣΙΑΣΤΗΚΕ ΣΦΑΛΜΑ",4,null,null,null,4);	            	
+	            	//trace(e.message);
+	            }
+            }        
+                
+            private function txtPHighNormal_change():void
+           	{
+            	try
+            	{
+            		txtPHigh.text = txtPHighNormal.text;	
+	            }
+	            catch (e:Error)
+	            {
+	            	Alert.show("ΠΑΡΟΥΣΙΑΣΤΗΚΕ ΚΑΠΟΙΟ ΣΦΑΛΜΑ. ΠΑΡΑΚΑΛΩ ΕΛΕΓΞΤΕ!","ΠΑΡΟΥΣΙΑΣΤΗΚΕ ΣΦΑΛΜΑ",4,null,null,null,4);	            	
+	            	//trace(e.message);
+	            }
+            } 
+            
+            private function txtPLowNormal_change():void
+           	{
+            	try
+            	{
+            		txtPLow.text = txtPLowNormal.text;	
+	            }
+	            catch (e:Error)
+	            {
+	            	Alert.show("ΠΑΡΟΥΣΙΑΣΤΗΚΕ ΚΑΠΟΙΟ ΣΦΑΛΜΑ. ΠΑΡΑΚΑΛΩ ΕΛΕΓΞΤΕ!","ΠΑΡΟΥΣΙΑΣΤΗΚΕ ΣΦΑΛΜΑ",4,null,null,null,4);	            	
+	            	//trace(e.message);
+	            }
+            }                               
+
+            private function txtAlcHighNormal_change():void
+           	{
+            	try
+            	{
+            		txtAlcHigh.text = txtAlcHighNormal.text;	
+	            }
+	            catch (e:Error)
+	            {
+	            	Alert.show("ΠΑΡΟΥΣΙΑΣΤΗΚΕ ΚΑΠΟΙΟ ΣΦΑΛΜΑ. ΠΑΡΑΚΑΛΩ ΕΛΕΓΞΤΕ!","ΠΑΡΟΥΣΙΑΣΤΗΚΕ ΣΦΑΛΜΑ",4,null,null,null,4);	            	
+	            	//trace(e.message);
+	            }
+            } 
+            
+            private function txtAlcLowNormal_change():void
+           	{
+            	try
+            	{
+            		txtAlcLow.text = txtAlcLowNormal.text;	
+	            }
+	            catch (e:Error)
+	            {
+	            	Alert.show("ΠΑΡΟΥΣΙΑΣΤΗΚΕ ΚΑΠΟΙΟ ΣΦΑΛΜΑ. ΠΑΡΑΚΑΛΩ ΕΛΕΓΞΤΕ!","ΠΑΡΟΥΣΙΑΣΤΗΚΕ ΣΦΑΛΜΑ",4,null,null,null,4);	            	
+	            	//trace(e.message);
+	            }
+            }                               
+
+
+            private function txtCaOurHighNormal_change():void
+           	{
+            	try
+            	{
+            		txtCaOurHigh.text = txtCaOurHighNormal.text;	
+	            }
+	            catch (e:Error)
+	            {
+	            	Alert.show("ΠΑΡΟΥΣΙΑΣΤΗΚΕ ΚΑΠΟΙΟ ΣΦΑΛΜΑ. ΠΑΡΑΚΑΛΩ ΕΛΕΓΞΤΕ!","ΠΑΡΟΥΣΙΑΣΤΗΚΕ ΣΦΑΛΜΑ",4,null,null,null,4);	            	
+	            	//trace(e.message);
+	            }
+            } 
+            
+            private function txtCaOurLowNormal_change():void
+           	{
+            	try
+            	{
+            		txtCaOurLow.text = txtCaOurLowNormal.text;	
+	            }
+	            catch (e:Error)
+	            {
+	            	Alert.show("ΠΑΡΟΥΣΙΑΣΤΗΚΕ ΚΑΠΟΙΟ ΣΦΑΛΜΑ. ΠΑΡΑΚΑΛΩ ΕΛΕΓΞΤΕ!","ΠΑΡΟΥΣΙΑΣΤΗΚΕ ΣΦΑΛΜΑ",4,null,null,null,4);	            	
+	            	//trace(e.message);
+	            }
+            }                               
+            
+            
+            private function ClearAll():void
+            {
+ 				txtAlcHighNormal.text = "";
+ 				txtAlcLowNormal.text = "";
+ 				txtPHighNormal.text = "";
+ 				txtPLowNormal.text = "";
+ 				txtCaHighNormal.text = "";
+ 				txtCaLowNormal.text = "";
+ 				txtCaOurHighNormal.text = "";
+ 				txtCaOurLowNormal.text = "";
+ 				txtAlcHighNormal_change();
+ 				txtAlcLowNormal_change();
+ 				txtCaHighNormal_change();
+ 				txtCaLowNormal_change();
+ 				txtCaOurHighNormal_change();
+ 				txtCaOurLowNormal_change();
+ 				txtPHighNormal_change();
+ 				txtPLowNormal_change();
+            }
+            
+            private function Calculate():void
+            {
+            	try
+            	{
+            			
+            		var controlsOK:Boolean;
+            		
+            		controlsOK = true;
+            		//arxika theoroume oti ola ta controls exoun parei times
+            		
+            		//meta elegxoume ena ena an den exei timi kai kanoume 
+            		//ti metavliti false gia na emfanisoume sxetiko message sto telos
+            		if (txtAlc.text == "") controlsOK = false;
+            		if (txtAlcHigh.text == "") controlsOK = false;
+            		if (txtAlcHighNormal.text == "") controlsOK = false;
+            		if (txtAlcLow.text == "") controlsOK = false;
+            		if (txtAlcLowNormal.text == "") controlsOK = false;
+            		if (txtCa.text == "") controlsOK = false;
+            		if (txtCaHigh.text == "") controlsOK = false;
+            		if (txtCaHighNormal.text == "") controlsOK = false;
+            		if (txtCaLow.text == "") controlsOK = false;
+            		if (txtCaLowNormal.text == "") controlsOK = false;
+            		if (txtCaOur.text == "") controlsOK = false;
+            		if (txtCaOurHigh.text == "") controlsOK = false;
+            		if (txtCaOurHighNormal.text == "") controlsOK = false;
+            		if (txtCaOurLow.text == "") controlsOK = false;
+            		if (txtCaOurLowNormal.text == "") controlsOK = false;
+            		if (txtP.text == "") controlsOK = false;
+            		if (txtPHigh.text == "") controlsOK = false;
+            		if (txtPHighNormal.text == "") controlsOK = false;
+            		if (txtPLow.text == "") controlsOK = false;
+            		if (txtPLowNormal.text == "") controlsOK = false;
+            		
+            		if (controlsOK == false)
+            		{
+            		//an kapoio control den exei timi emfanizoume sxetiko minima
+            			Alert.show("ΕΝΑ 'Η ΠΕΡΙΣΣΟΤΕΡΑ ΠΕΔΙΑ ΔΕΝ ΕΧΟΥΝ ΣΥΜΠΛΗΡΩΘΕΙ. ΠΑΡΑΚΑΛΩ ΕΛΕΓΞΤΕ!","ΠΡΟΣΟΧΗ",4,null,null,null,4);
+            			return;
+            		}
+            		
+            		//afou exoun elegxthei oi times oti einai simpliromenes arxizei o ypologismos:
+            		
+            		
+            		//emfanise tora kai ta apotelesmata:
+            		txtExetaseis.text = "";
+            		txtNosos.text = "";
+            		lbExetaseis.visible = true;
+            		lbPossible.visible = true;
+            		txtExetaseis.visible = true;
+            		txtNosos.visible = true;
+            		
+            		var Ca:Number;
+            		var P:Number;
+            		var Alc:Number;
+            		var CaOur:Number;
+            		var CaHighNormal:Number;
+            		var CaLowNormal:Number;
+            		var PHighNormal:Number;
+            		var PLowNormal:Number;
+            		var AlcHighNormal:Number;
+            		var AlcLowNormal:Number;
+            		var CaOurHighNormal:Number;
+            		var CaOurLowNormal:Number;
+            		
+            		//diavase tis metavlites apo ta controls:
+            		Ca = Number(txtCa.text);
+            		P = Number(txtP.text);
+            		Alc = Number(txtAlc.text);
+            		CaOur = Number(txtCaOur.text);
+            		CaHighNormal = Number(txtCaHighNormal.text);
+            		CaLowNormal = Number(txtCaLowNormal.text);
+					PHighNormal = Number(txtPHighNormal.text);
+            		PLowNormal = Number(txtPLowNormal.text);
+            		AlcHighNormal = Number(txtAlcHighNormal.text);
+            		AlcLowNormal = Number(txtAlcLowNormal.text);
+            		CaOurHighNormal = Number(txtCaOurHighNormal.text);
+            		CaOurLowNormal = Number(txtCaOurLowNormal.text);   
+            		
+            		//edo orizoume tis metavlites elegxou...
+            		var CaLow:Boolean;
+            		var CaNormal:Boolean;
+            		var CaHigh:Boolean;
+            		
+            		//arxika oles einai false...mono mia ek twn triwn tha ginei true
+            		CaLow = false;
+            		CaNormal = false;
+            		CaHigh = false;
+            		
+            		var PLow:Boolean;
+            		var PNormal:Boolean;
+            		var PHigh:Boolean;
+            		
+            		PLow = false;
+            		PNormal = false;
+            		PHigh = false;
+            		
+            		var AlcLow:Boolean;
+            		var AlcNormal:Boolean;
+            		var AlcHigh:Boolean;
+            		
+            		AlcLow = false;
+            		AlcNormal = false;
+            		AlcHigh = false;
+            		
+            		var CaOurLow:Boolean;
+            		var CaOurNormal:Boolean;
+            		var CaOurHigh:Boolean;
+            		
+            		CaOurLow = false;
+            		CaOurNormal = false;
+            		CaOurHigh = false;
+            		
+            		//edo tora gia kathemia apo tis 4 metavlites apofasizoume an einai xamili, kanoniki i ipsili:
+            		if (Ca < CaLowNormal) CaLow = true;
+            		if ((Ca >= CaLowNormal) && (Ca <= CaHighNormal)) CaNormal = true;
+            		if (Ca > CaHighNormal) CaHigh = true;
+            		
+            		if (P < PLowNormal) PLow = true;
+            		if ((P >= PLowNormal) && (P <= PHighNormal)) PNormal = true;
+            		if (P > PHighNormal) PHigh = true;
+            		
+            		if (Alc < AlcLowNormal) AlcLow = true;
+            		if ((Alc >= AlcLowNormal) && (Alc <= AlcHighNormal)) AlcNormal = true;
+            		if (Alc > AlcHighNormal) AlcHigh = true;
+            		
+            		if (CaOur < CaOurLowNormal) CaOurLow = true;
+            		if ((CaOur >= CaOurLowNormal) && (CaOur <= CaOurHighNormal)) CaOurNormal = true;
+            		if (CaOur > CaOurHighNormal) CaOurHigh = true;
+            		
+            		//tora pleon mono mia metavliti apo kathe systatiko einai true             		            		
+            		//kai edo tora kanoume tis diagnoseis...
+            		
+            		//1:
+            		if ((CaLow || CaNormal) && PLow && AlcHigh && CaOurLow)
+            		{
+            			txtNosos.text = "ΥΠΟΣΙΤΙΣΜΟΣ";
+            			txtExetaseis.text = "ΠΑΡΑΘΟΡΜΟΝΗ";
+            		}//2:
+            		else if (CaHigh && PNormal && AlcHigh && CaOurHigh)
+            		{
+            			txtNosos.text = "ΣΑΡΚΟΕΙΔΩΣΗ";
+            			txtExetaseis.text = "ΑΚΤΙΝΟΛΟΓΙΚΕΣ, ΒΙΟΨΙΑ ΛΕΜΦΑΔΕΝΩΝ";
+            		}//3: 
+            		else if ((CaLow || CaNormal) && PLow && AlcHigh && CaOurLow)
+            		{
+            			txtNosos.text = "ΥΠΟΒΙΤΑΜΙΝΩΣΗ D";
+            			txtExetaseis.text = "ΑΚΤΙΝΟΛΟΓΙΚΕΣ, ΑΝΤΑΠΟΚΡΙΣΗ ΣΕ ΒΙΤΑΜΙΝΗ D";
+            		}//4:
+            		else if (CaLow && PLow && AlcHigh && CaOurLow)
+            		{
+            			txtNosos.text = "ΣΥΝΔΡΟΜΟ ΔΥΣΑΠΟΡΡΟΦΗΣΗΣ";
+            			txtExetaseis.text = "ΛΙΠΟΣ ΚΟΠΡΑΝΩΝ, ΔΟΚΙΜΑΣΙΑ D-ΞΥΛΟΖΗΣ";
+            		}//5:
+            		else if (CaLow && PNormal && AlcNormal && CaOurNormal)
+            		{
+            			txtNosos.text = "ΝΕΦΡΩΣΙΚΟ ΣΥΝΔΡΟΜΟ";
+            			txtExetaseis.text = "ΓΕΝΙΚΗ ΟΥΡΩΝ, ΗΛΕΚΤΡ. ΛΕΥΚΩΜΑΤΩΝ, ΚΡΕΑΤΙΝΙΝΗ";
+            		}//6:
+            		else if (CaNormal && PNormal && AlcNormal && CaOurNormal)
+            		{
+            			txtNosos.text = "ΣΥΝΔΡΟΜΟ CUSHING";
+            			txtExetaseis.text = "ΣΤΕΡΙΝΟΕΙΔΗ ΑΙΜΑΤΟΣ ΚΑΙ ΟΥΡΩΝ";
+            		}//7:
+            		else if ((CaHigh || CaNormal) && PNormal && AlcHigh && CaOurHigh)
+            		{
+            			txtNosos.text = "ΜΕΤΑΣΤ. Ca ΟΣΤΩΝ";
+            			txtExetaseis.text = "ΑΚΤΙΝΟΛΟΓΙΚΕΣ, ΒΙΟΨΙΑ, ΣΠΙΝΘΗΡΟΓΡΑΦΗΜΑ ΟΣΤΩΝ";
+            		}//8:     
+            		else if (CaLow && PHigh && AlcHigh && CaOurLow)
+            		{
+            			txtNosos.text = "ΧΡΟΝΙΑ ΝΕΦΡΙΚΗ ΑΝΕΠΑΡΚΕΙΑ";
+            			txtExetaseis.text = "ΑΚΤΙΝΟΛΟΓΙΚΕΣ, ΠΑΡΑΘΟΡΜΟΝΗ";
+            		}//9:  
+            		else if ((CaLow || CaNormal) && PLow && AlcHigh && CaOurHigh)
+            		{
+            			txtNosos.text = "ΝΕΦΡ. ΣΩΛΗΝ. ΟΞΕΩΣΗ";
+            			txtExetaseis.text = "ΟΞΕΩΣΗ, ΑΛΚΑΛΙΚΑ ΟΥΡΑ";
+            		}//10: 
+            		else if (CaHigh && PLow && AlcHigh && CaOurHigh)
+            		{
+            			txtNosos.text = "ΥΠΕΡΠΑΡΑΘΥΡΕΟΕΙΔΙΣΜΟΣ";
+            			txtExetaseis.text = "ΠΑΡΑΘΟΡΜΟΝΗ";
+            		}//11:
+            		else if (CaLow && PHigh && AlcNormal && CaOurLow)
+            		{
+            			txtNosos.text = "ΥΠΟΠΑΡΑΘΥΡΕΟΕΙΔΙΣΜΟΣ";
+            			txtExetaseis.text = "ΠΑΡΑΘΟΡΜΟΝΗ";
+            		}            		            		           		          		       		            		            		
+            		//AN DEN PEFTEI SE KAPOIO SYNDYASMO DE MPOREI NA APOFANTHEI: 
+            		else
+            		{
+            			txtNosos.text = "ΤΟ ΠΡΟΓΡΑΜΜΑ ΔΕ ΜΠΟΡΕΙ ΝΑ ΑΠΟΦΑΝΘΕΙ...";
+            			txtExetaseis.text = "";
+            		}
+            		
+	            }
+	            catch (e:Error)
+	            {
+	            	Alert.show("ΠΑΡΟΥΣΙΑΣΤΗΚΕ ΚΑΠΟΙΟ ΣΦΑΛΜΑ ΣΤΟΥΣ ΥΠΟΛΟΓΙΣΜΟΥΣ. ΠΑΡΑΚΑΛΩ ΕΛΕΓΞΤΕ!","ΠΑΡΟΥΣΙΑΣΤΗΚΕ ΣΦΑΛΜΑ",4,null,null,null,4);
+	            	//trace(e.message);
+	            }            	
+            }
+			
+
+            private function ClearCalc():void
+            {
+            	try
+            	{
+            		lbExetaseis.visible = false;
+            		lbPossible.visible = false;
+            		txtExetaseis.visible = false;
+            		txtNosos.visible = false;	
+            		txtAlc.text = "";
+            		txtCa.text = "";
+            		txtCaOur.text = "";
+            		txtP.text = "";
+            			
+	            }
+	            catch (e:Error)
+	            {
+	            	Alert.show("ΠΑΡΟΥΣΙΑΣΤΗΚΕ ΚΑΠΟΙΟ ΣΦΑΛΜΑ. ΠΑΡΑΚΑΛΩ ΕΛΕΓΞΤΕ!","ΠΑΡΟΥΣΙΑΣΤΗΚΕ ΣΦΑΛΜΑ",4,null,null,null,4);	            	
+	            	//trace(e.message);
+	            }            	
+            }
+			
+        ]]>
+    </mx:Script>
+
+</mx:Application>
